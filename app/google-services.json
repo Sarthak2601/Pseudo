@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "866297156218",
+    "firebase_url": "https://pseudo-fd0a9.firebaseio.com",
+    "project_id": "pseudo-fd0a9",
+    "storage_bucket": "pseudo-fd0a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866297156218:android:70929c43809449cd0f61c3",
+        "android_client_info": {
+          "package_name": "com.sarthak.pseudo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866297156218-jbj0ar1ifto9r59qpkhpd7mersd4o2q0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXvj74fYkH_mXg18yQ9sBWN5tgpcpOPjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866297156218-jbj0ar1ifto9r59qpkhpd7mersd4o2q0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
