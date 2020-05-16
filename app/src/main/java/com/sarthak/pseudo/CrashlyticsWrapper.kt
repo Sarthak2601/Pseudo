@@ -1,13 +1,11 @@
 package com.sarthak.pseudo
 
-import android.content.Context
 import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics
-import com.google.firebase.crashlytics.internal.common.CrashlyticsCore
 import java.lang.Exception
 
 
-class CrashlyticsWrapper {
+public class CrashlyticsWrapper {
 
     val firebaseCrashlytics: FirebaseCrashlytics = FirebaseCrashlytics.getInstance()
 

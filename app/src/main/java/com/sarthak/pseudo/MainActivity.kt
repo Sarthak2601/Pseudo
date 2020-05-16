@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.MalformedJsonException
+import android.widget.Button
 import android.widget.Toast
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,7 +13,13 @@ import java.lang.Exception
 class MainActivity : AppCompatActivity() {
 
     private val crashlyticsWrapper : CrashlyticsWrapper = CrashlyticsWrapper()
+    private val analyticsWrapper = AnalyticsWrapper()
     val exception: Exception = Exception()
+
+    private val eventValue:String = "Button Press"
+    private val buttonId: Int = R.id.buttonAnalytics
+    private val screenName: String = "Main Screen"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,6 +32,9 @@ class MainActivity : AppCompatActivity() {
                 crashlyticsWrapper.logException(exception)
                 Log.i("EXCEPTION", exception.toString())
             }
+        }
+        buttonAnalytics.setOnClickListener {
+            analyticsWrapper.event_recording_button_click(eventValue, buttonId, screenName, this)
         }
 
     }
