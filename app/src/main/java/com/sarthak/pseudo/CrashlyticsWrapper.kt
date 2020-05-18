@@ -5,7 +5,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import java.lang.Exception
 
 
-public class CrashlyticsWrapper {
+public open class CrashlyticsWrapper {
 
     val firebaseCrashlytics: FirebaseCrashlytics = FirebaseCrashlytics.getInstance()
 
