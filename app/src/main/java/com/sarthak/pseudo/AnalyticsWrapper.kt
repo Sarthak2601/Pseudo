@@ -33,4 +33,5 @@ class AnalyticsWrapper {
         return bundle
 
     }
+
 }

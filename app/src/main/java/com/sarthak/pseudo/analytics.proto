@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package app;
+package model2;
 
-option java_package = "org.oppia.app";
-option java_multiple_files = true;
+option java_package = "com.sarthak.pseudo";
+option java_outer_classname = "AnalyticsProtos";
 
-message event_reporting_button_click {
+message event_saving_button_click {
   int64 timestamp = 1;
   string event_name = 2;
   int32 button_id = 3;
