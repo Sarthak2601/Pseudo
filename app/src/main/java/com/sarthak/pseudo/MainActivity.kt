@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        FirebaseCrashlytics.getInstance()
+        val firebaseCrashlytics = FirebaseCrashlytics.getInstance()
         button.setOnClickListener {
             try {
                 throw Exception("Test Malformed Exception Enabled")
             }
             catch (exception: Exception){
-                crashlyticsWrapper.logException(exception)
+                crashlyticsWrapper.logException(exception, firebaseCrashlytics)
                 Log.i("EXCEPTION", exception.toString())
             }
         }

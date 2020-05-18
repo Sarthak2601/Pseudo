@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import com.google.firebase.analytics.FirebaseAnalytics
 
-class AnalyticsWrapper {
+open class AnalyticsWrapper {
     private var bundle: Bundle = Bundle()
     private var eventValue:String? = null
     private var buttonId: Int? = null
