@@ -27,6 +27,22 @@
         android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"/>
 
+    <Button
+        android:id="@+id/buttonException"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exception Recording"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/buttonExceptionDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exception Recreating"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"/>
+
     </LinearLayout>
 
 </RelativeLayout>
