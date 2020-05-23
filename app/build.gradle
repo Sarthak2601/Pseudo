@@ -22,14 +22,10 @@ protobuf {
                 remove java
             }
             task.plugins {
-                javalite { }
+                javalite {}
             }
         }
     }
-}
-
-sourceSets{
-    main.java.srcDirs += "${protobuf.generatedFilesBaseDir}/main/javalite"
 }
 
 android {
@@ -67,7 +63,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
     implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
-    implementation 'com.google.protobuf:protobuf-lite:3.0.1'
+    implementation 'com.google.protobuf:protobuf-lite:3.0.0'
 
     debugImplementation 'org.mockito:mockito-core:2.25.0'
 
@@ -78,7 +74,9 @@ dependencies {
     testImplementation 'com.nhaarman:mockito-kotlin-kt1.1:1.5.0'
     testImplementation "org.mockito:mockito-inline:2.25.0"
     androidTestImplementation "org.mockito:mockito-android:2.25.0"
+}
 
-
-
+sourceSets {
+    main.java.srcDirs += "${protobuf.generatedFilesBaseDir}/main/javalite"
+    main.java.srcDirs += "$projectDir/src/main/proto"
 }
