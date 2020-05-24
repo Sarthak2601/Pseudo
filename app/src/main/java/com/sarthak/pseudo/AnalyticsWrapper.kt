@@ -2,13 +2,21 @@ package com.sarthak.pseudo
 
 import android.content.Context
 import android.os.Bundle
+import android.os.Parcelable
 import com.google.firebase.analytics.FirebaseAnalytics
+import kotlinx.android.parcel.Parcelize
 
 open class AnalyticsWrapper {
     private var bundle: Bundle = Bundle()
     private var eventValue:String? = null
     private var buttonId: Int? = null
     private var screenName: String? = null
+
+    @Parcelize
+    enum class Priority(var value: Int) : Parcelable {
+        ESSENTIAL(0),
+        OPTIONAL(1)
+    }
 
     private fun event_reporting(bundle: Bundle, context: Context, title: String){
         eventValue = bundle.getString("Event_value")
@@ -30,6 +38,7 @@ open class AnalyticsWrapper {
         bundle.putString("Event_value",eventValue)
         bundle.putInt("Button_id",buttonId)
         bundle.putString("Screen_name",screenName)
+        bundle.putParcelable("Priority", Priority.ESSENTIAL)
         return bundle
 
     }
