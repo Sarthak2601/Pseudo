@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private val crashlyticsWrapper : CrashlyticsWrapper = CrashlyticsWrapper()
     private val analyticsWrapper = AnalyticsWrapper()
     private val customExceptions = CustomExceptions()
+    private lateinit var firebaseCrashlytics: FirebaseCrashlytics
     val exception: Exception = Exception()
 
     private val eventValue:String = "Button Press"
@@ -24,13 +25,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val firebaseCrashlytics = FirebaseCrashlytics.getInstance()
+        firebaseCrashlytics = FirebaseCrashlytics.getInstance()
+        crashlyticsWrapper.logMessage("TEST MESS", firebaseCrashlytics)
         button.setOnClickListener {
             try {
+
+
                 throw Exception("Test Malformed Exception Enabled")
             }
             catch (exception: Exception){
-                crashlyticsWrapper.logException(exception, firebaseCrashlytics)
+                crashlyticsWrapper.logException(exception,"TEST", firebaseCrashlytics)
                 Log.i("EXCEPTION", exception.toString())
             }
         }
@@ -48,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonExceptionDisplay.setOnClickListener {
-            customExceptions.createException()
+            customExceptions.createException(firebaseCrashlytics)
         }
     }
 }

@@ -9,7 +9,8 @@ public open class CrashlyticsWrapper {
 
     val firebaseCrashlytics: FirebaseCrashlytics = FirebaseCrashlytics.getInstance()
 
-    fun logException(exception: Exception, firebaseCrashlytics: FirebaseCrashlytics ){
+    fun logException(exception: Exception, logMessage: String, firebaseCrashlytics: FirebaseCrashlytics ){
+        logMessage(logMessage, firebaseCrashlytics)
         firebaseCrashlytics.recordException(exception)
         Log.i("LOGGING", "Record Exception")
     }
@@ -19,3 +20,4 @@ public open class CrashlyticsWrapper {
     }
 
 }
+
